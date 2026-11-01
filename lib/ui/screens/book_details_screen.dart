@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../domain/book.dart';
-import '../../logic/catalog_cubit.dart';
+import '../../logic/books_cubit.dart';
 import '../theme/app_styles.dart';
 import '../widgets/book_cover.dart';
 import '../widgets/book_form.dart';
 import '../widgets/book_metadata.dart';
 import '../widgets/book_property.dart';
 import '../widgets/delete_book_dialog.dart';
+import '../../logic/books_state.dart';
 
 /// Показывает полную информацию о книге, лайк и доступные действия с книгой.
 class BookDetailsScreen extends StatelessWidget {

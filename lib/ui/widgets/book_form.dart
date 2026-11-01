@@ -8,13 +8,14 @@ import 'package:image_picker/image_picker.dart';
 
 import '../../core/error_messages.dart';
 import '../../domain/book.dart';
-import '../../logic/catalog_cubit.dart';
+import '../../logic/books_cubit.dart';
 import '../theme/app_styles.dart';
 import 'book_cover_size.dart';
 import 'book_form_field.dart';
 import 'book_genre_labels.dart';
 import 'book_image.dart';
 import 'cover_picker.dart';
+import '../../logic/books_state.dart';
 
 /// Отдельный экран для добавления книги; переданная книга открывает редактирование.
 class BookForm extends StatefulWidget {
