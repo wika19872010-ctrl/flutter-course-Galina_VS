@@ -5,7 +5,7 @@ import 'package:flutter_application_dz_27092026/data/book_repository.dart';
 import 'package:flutter_application_dz_27092026/data/favorites_store.dart';
 import 'package:flutter_application_dz_27092026/data/firestore_book_repository.dart';
 import 'package:flutter_application_dz_27092026/main.dart';
-import 'package:flutter_application_dz_27092026/logic/catalog_cubit.dart';
+import 'package:flutter_application_dz_27092026/logic/books_cubit.dart';
 import 'package:flutter_application_dz_27092026/ui/screens/catalog_screen.dart';
 import 'package:flutter_application_dz_27092026/ui/widgets/book_card.dart';
 

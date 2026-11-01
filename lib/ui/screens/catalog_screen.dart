@@ -7,13 +7,14 @@ import '../../core/login_error_messages.dart';
 import '../../data/book_repository.dart';
 import '../../data/favorites_store.dart';
 import '../../domain/book.dart';
-import '../../logic/catalog_cubit.dart';
+import '../../logic/books_cubit.dart';
 import '../navigation/book_page_route.dart';
 import '../theme/app_styles.dart';
 import '../widgets/book_card.dart';
 import '../widgets/book_form.dart';
 import '../widgets/delete_book_dialog.dart';
 import 'book_details_screen.dart';
+import '../../logic/books_state.dart';
 
 /// Создаёт общее управление каталогом и передаёт ему хранилища книг и лайков.
 class CatalogScreen extends StatelessWidget {
@@ -278,10 +279,10 @@ class _CatalogViewState extends State<_CatalogView> {
   /// чтобы build не содержал вложенный тернарный оператор.
   Widget _catalogBody(CatalogState state, CatalogCubit cubit) {
     // Выбираем загрузку, ошибку, пустую заглушку или список книг.
-    if (state.status == CatalogStatus.loading) {
+    if (state is CatalogLoadInProgress) {
       return const Center(child: CircularProgressIndicator());
     }
-    if (state.status == CatalogStatus.failure) {
+    if (state is CatalogLoadFailure) {
       return Center(
         child: Padding(
           padding: const EdgeInsets.all(16), // Создаём отступы внутри блока.

@@ -5,10 +5,11 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_application_dz_27092026/data/book_repository.dart';
 import 'package:flutter_application_dz_27092026/domain/book.dart';
-import 'package:flutter_application_dz_27092026/logic/catalog_cubit.dart';
+import 'package:flutter_application_dz_27092026/logic/books_cubit.dart';
 
 import 'support/fake_book_repository.dart';
 import 'support/fake_favorites_store.dart';
+import 'package:flutter_application_dz_27092026/logic/books_state.dart';
 
 void main() {
   const first = Book(id: '1', title: 'Первая книга');
@@ -85,20 +86,17 @@ void main() {
       cubit.close,
     ); // После проверки закрываем созданные для неё объекты.
     expect(
-      cubit.state.status,
-      CatalogStatus.loading,
+      cubit.state, isA<CatalogLoadInProgress>()
     ); // Проверяем ожидаемый результат.
     await cubit.load();
     expect(
-      cubit.state.status,
-      CatalogStatus.failure,
+      cubit.state, isA<CatalogLoadFailure>(),
     ); // Проверяем ожидаемый результат.
     expect(cubit.state.error, 'Нет сети'); // Проверяем ожидаемый результат.
     repository.loadError = null;
     await cubit.load();
     expect(
-      cubit.state.status,
-      CatalogStatus.ready,
+      cubit.state, isA<CatalogLoadSuccess>()
     ); // Проверяем ожидаемый результат.
     expect(cubit.state.books.single.id, '1'); // Проверяем ожидаемый результат.
   });
