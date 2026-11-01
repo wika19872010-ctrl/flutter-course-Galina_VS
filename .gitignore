@@ -46,3 +46,11 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Файлы от flutterfire configur(firebase_options.dart, google-services.json, firebase.json)
+# кэш Hosting
+.firebase/ 
+# логи CLI
+firebase-debug.log
+# ключи сервисного аккаунта
+*-firebase-adminsdk-*.json
