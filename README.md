@@ -1,17 +1,101 @@
-# flutter_application_dz_27092026
+> Актуальное изменение: в приложении один общий каталог Firestore (`sharedBooks`). Лайки остаются личными для каждого UID. Переключение и копирование в личный каталог удалены. Старые личные документы в облаке не удалялись.
 
-A new Flutter project.
+# Каталог книг
 
-## Getting Started
+Учебное Flutter-приложение с Firebase Authentication, SDK Cloud Firestore и Cubit.
+Каталог обновляется через `snapshots()`: репозиторий передаёт список в Cubit,
+а экран отображает состояние через `BlocBuilder`. Новые книги создаются через
+`add()`, модель получает строковый ID из `doc.id`. Существующие документы
+сохранены; старые числовые ключи избранного поддерживаются без переноса базы.
+Редактирование не меняет ID документа, одинаковые названия книг разрешены.
+Текущий дизайн каталога и подробностей сохранён. Страна автора расположена
+отдельной строкой под автором и годом в том же стиле.
 
-This project is a starting point for a Flutter application.
+## Запуск
 
-A few resources to get you started if this is your first Flutter project:
+```sh
+flutter pub get
+flutter run
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+При нескольких устройствах выберите нужное через `flutter devices` и
+`flutter run -d <device-id>`. Проверен запуск на iPhone 18 Pro Simulator.
+Для запуска на физическом iPhone нужна стандартная настройка подписи Xcode.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Проверки
+
+```sh
+flutter test
+flutter analyze
+```
+
+В установленной версии Flutter есть ошибка LSP при кириллице в полном пути
+проекта: SDK отправляет длину строки вместо длины UTF-8-сообщения.
+Это падение инструмента, а не ошибка Dart-кода. Для текущего пути работают
+`dart analyze lib test` и запуск `flutter analyze` через ASCII-псевдоним:
+
+```sh
+ln -s "$PWD" /tmp/book_catalog_review
+flutter analyze /tmp/book_catalog_review --no-pub
+```
+
+Создавайте ссылку только если выбранное имя в `/tmp` ещё не занято.
+На пути без кириллицы обычный `flutter analyze` работает без этого обхода.
+
+## Структура
+
+- `lib/domain/book.dart` — модель и JSON-преобразования.
+- `lib/data/` — авторизация, контракты репозиториев и доступ к Firestore.
+- `lib/logic/catalog_cubit.dart` — состояние каталога, загрузка, поиск, фильтрация, лайки, добавление и удаление книг.
+- `lib/ui/` — экраны, общие виджеты и оформление.
+- `test/` — проверки пользовательских сценариев и репозиториев.
+- `firestore.rules` — разграничение доступа, защита записей владельца и личного избранного.
+
+В начале исходных файлов кратко описано их назначение. Комментарии внутри
+объясняют оформление и поведение простыми словами; общие подписи к скобкам
+и служебным строкам удалены. JSON-конфигурации и
+генерируемые Flutter файлы платформ сохраняют требуемый инструментами формат.
+
+
+## Зависимости Firestore
+
+Используются `firebase_core 5.0.0`, `firebase_auth 7.0.0` и
+`cloud_firestore 7.0.0`: они согласованы с одной версией нативного Firebase SDK. Тестовая подмена `fake_cloud_firestore 4.4.0`
+пока не поддерживает новые методы интерфейса 8.1, поэтому в dev_dependencies
+задано ограничение `cloud_firestore_platform_interface <8.1.0`.
+
+Для резервирования никнеймов транзакция читает один документ имени.
+Правила разрешают `get` вошедшему пользователю, запрещают `list` и `update`.
+Обновлённые правила опубликованы 24 октября 2026 года в `flutter-book-catalog`.
+Для повторной публикации:
+
+```sh
+firebase deploy --only firestore:rules --project flutter-book-catalog
+```
+
+## Проверка после перехода на SDK — 24 октября 2026
+
+- Все 56 тестов прошли: репозитории, Cubit, вход, лайки, формы и анимации.
+- `dart analyze lib test` и `flutter analyze` через ASCII-путь — без замечаний.
+- API проверки правил: 61 из 61 успешно, без создания документов и аккаунтов.
+- Обновлённый `firestore.rules` опубликован в `flutter-book-catalog`.
+- `flutter run` собрал и запустил приложение на iPhone 18 Pro Simulator.
+  Проверен экран приветствия. Ручной вход в два настоящих аккаунта и изменения
+  рабочей базы в этой проверке не выполнялись; эти сценарии проверены подменами SDK.
+
+## Переход на add — 1 ноября 2026
+
+- Новые документы создаются через `collection.add(...)` без поля `id`.
+- `Book.id` берётся из `doc.id` и имеет тип `String`.
+- Редактирование обновляет прежний документ, даже при смене названия.
+- Старое поле `id` существующих документов сохраняется. Через `legacyId`
+  оно связывается с прежним избранным; переносить документы и лайки не нужно.
+- Одинаковые названия разрешены. Изменять и удалять можно только свои книги.
+- Все 58 тестов приложения прошли; `dart analyze lib test` без замечаний.
+- Все 95 [проверок правил через API Firebase](https://firebase.google.com/docs/reference/rules/rest/v1/projects/test)
+  прошли, включая атомарное создание и снятие лайков.
+- Новые правила опубликованы в `flutter-book-catalog` 1 ноября 2026 года.
+- Обновлённое приложение собрано и запущено на iPhone 18 Pro Simulator.
+
+Каталог по-прежнему использует Cubit и BlocBuilder для итогового проекта.
+Отдельное требование ДЗ 5 о StreamBuilder этим изменением не реализуется.

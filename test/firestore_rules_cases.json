@@ -1,0 +1,2767 @@
+{
+  "testCases": [
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "get",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "get",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "get",
+        "auth": null,
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "list",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "list",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "list",
+        "auth": null,
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": null,
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "update",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "update",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "update",
+        "auth": null,
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "delete",
+        "auth": null,
+        "resource": {
+          "data": {
+            "bookId": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 2
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "1"
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 1,
+            "extra": true
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {}
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "get",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "get",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "get",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": null,
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "list",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "list",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "list",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": null,
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": null,
+        "resource": {
+          "data": {
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "update",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "update",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "update",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": null,
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "delete",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "delete",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "delete",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": null,
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/arbitrary-key",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "update",
+        "path": "/databases/(default)/documents/sharedBooks/arbitrary-key",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "id": 1,
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0LrQvdC40LPQsCAvINGC0L7QvCAxfNCw0LLRgtC-0YA",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Книга / Том 1",
+            "author": "Автор",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Книга / Том 1",
+          "author": "Автор",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/YSU3Q2J8YyUyNTdj",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "A|B",
+            "author": "C%7C",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "A|B",
+          "author": "C%7C",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/Ym9vayDwn5OWfHJlYWRlcg",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Book 📖",
+            "author": "Reader",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Book 📖",
+          "author": "Reader",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCAxICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsHzRjiDRgNGRINGF0LDQvQ",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 1 (Я стал графским ублюдком). Новелла",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 1 (Я стал графским ублюдком). Новелла",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCAxICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsCArINC-0YTQuNGG0LjQsNC70YzQvdGL0Lkg0LzQtdGA0Yd80Y4g0YDRkSDRhdCw0L0",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 1 (Я стал графским ублюдком). Новелла + официальный мерч",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 1 (Я стал графским ублюдком). Новелла + официальный мерч",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCAyICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsHzRjiDRgNGRINGF0LDQvQ",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 2 (Я стал графским ублюдком). Новелла",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 2 (Я стал графским ублюдком). Новелла",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCAyICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsCArINC-0YTQuNGG0LjQsNC70YzQvdGL0Lkg0LzQtdGA0Yd80Y4g0YDRkSDRhdCw0L0",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 2 (Я стал графским ублюдком). Новелла + официальный мерч",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 2 (Я стал графским ублюдком). Новелла + официальный мерч",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCAzICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsHzRjiDRgNGRINGF0LDQvQ",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 3 (Я стал графским ублюдком). Новелла",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 3 (Я стал графским ублюдком). Новелла",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCAzICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsCArINC-0YTQuNGG0LjQsNC70YzQvdGL0Lkg0LzQtdGA0Yd80Y4g0YDRkSDRhdCw0L0",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 3 (Я стал графским ублюдком). Новелла + официальный мерч",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 3 (Я стал графским ублюдком). Новелла + официальный мерч",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCA0ICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsHzRjiDRgNGRINGF0LDQvQ",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 4 (Я стал графским ублюдком). Новелла",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 4 (Я стал графским ублюдком). Новелла",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCA0ICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsCArINC-0YTQuNGG0LjQsNC70YzQvdGL0Lkg0LzQtdGA0Yd80Y4g0YDRkSDRhdCw0L0",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 4 (Я стал графским ублюдком). Новелла + официальный мерч",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 4 (Я стал графским ублюдком). Новелла + официальный мерч",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCA1ICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsHzRjiDRgNGRINGF0LDQvQ",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 5 (Я стал графским ублюдком). Новелла",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 5 (Я стал графским ублюдком). Новелла",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCA1ICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsCArINC-0YTQuNGG0LjQsNC70YzQvdGL0Lkg0LzQtdGA0Yd80Y4g0YDRkSDRhdCw0L0",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 5 (Я стал графским ублюдком). Новелла + официальный мерч",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 5 (Я стал графским ублюдком). Новелла + официальный мерч",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCA2ICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsHzRjiDRgNGRINGF0LDQvQ",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 6 (Я стал графским ублюдком). Новелла",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 6 (Я стал графским ублюдком). Новелла",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/0Y8g0YHRgtCw0Lsg0L7RgtCx0YDQvtGB0L7QvCDQs9GA0LDRhNGB0LrQvtC5INGB0LXQvNGM0LguINGC0L7QvCA2ICjRjyDRgdGC0LDQuyDQs9GA0LDRhNGB0LrQuNC8INGD0LHQu9GO0LTQutC-0LwpLiDQvdC-0LLQtdC70LvQsCArINC-0YTQuNGG0LjQsNC70YzQvdGL0Lkg0LzQtdGA0Yd80Y4g0YDRkSDRhdCw0L0",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Я стал отбросом графской семьи. Том 6 (Я стал графским ублюдком). Новелла + официальный мерч",
+            "author": "Ю Рё Хан",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "Я стал отбросом графской семьи. Том 6 (Я стал графским ублюдком). Новелла + официальный мерч",
+          "author": "Ю Рё Хан",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "   ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "  My   Book ",
+            "author": "   ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3w",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "  My   Book ",
+            "author": "",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/nicknames/n_reader",
+        "method": "get",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        }
+      },
+      "expressionReportLevel": "FULL",
+      "resource": {
+        "data": {
+          "ownerId": "reader-a",
+          "nickname": "Reader"
+        }
+      }
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/nicknames/n_reader",
+        "method": "get",
+        "auth": null
+      },
+      "expressionReportLevel": "FULL",
+      "resource": {
+        "data": {
+          "ownerId": "reader-a",
+          "nickname": "Reader"
+        }
+      }
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/nicknames/n_reader",
+        "method": "list",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        }
+      },
+      "expressionReportLevel": "FULL",
+      "resource": {
+        "data": {
+          "ownerId": "reader-a",
+          "nickname": "Reader"
+        }
+      }
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/nicknames/n_reader",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "ownerId": "reader-a",
+            "nickname": "Reader"
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/nicknames/n_reader",
+        "method": "update",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "ownerId": "reader-a",
+            "nickname": "Reader"
+          }
+        }
+      },
+      "expressionReportLevel": "FULL",
+      "resource": {
+        "data": {
+          "ownerId": "reader-a",
+          "nickname": "Reader"
+        }
+      }
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/nicknames/n_reader",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        }
+      },
+      "expressionReportLevel": "FULL",
+      "resource": {
+        "data": {
+          "ownerId": "reader-a",
+          "nickname": "Reader"
+        }
+      }
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/nicknames/n_reader",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        }
+      },
+      "expressionReportLevel": "FULL",
+      "resource": {
+        "data": {
+          "ownerId": "reader-a",
+          "nickname": "Reader"
+        }
+      }
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "create",
+        "path": "/databases/(default)/documents/sharedBooks/bXkgYm9va3xhdXRob3I",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "  My   Book ",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a",
+            "id": 1
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "id": 1,
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/newBook123",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/newBook123",
+        "method": "create",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/newBook123",
+        "method": "create",
+        "auth": null,
+        "resource": {
+          "data": {
+            "bookId": "newBook123"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/книга_из_консоли",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_из_консоли"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/книга_из_консоли",
+        "method": "create",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_из_консоли"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/книга_из_консоли",
+        "method": "create",
+        "auth": null,
+        "resource": {
+          "data": {
+            "bookId": "книга_из_консоли"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 1
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "method": "update",
+        "path": "/databases/(default)/documents/sharedBooks/newBook123",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Новое название",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "update",
+        "path": "/databases/(default)/documents/sharedBooks/newBook123",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "title": "Новое название",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "method": "update",
+        "path": "/databases/(default)/documents/sharedBooks/newBook123",
+        "auth": null,
+        "resource": {
+          "data": {
+            "title": "Новое название",
+            "author": " AUTHOR ",
+            "genres": [],
+            "year": 2026,
+            "image": "",
+            "ageRating": 0,
+            "ownerId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "title": "  My   Book ",
+          "author": " AUTHOR ",
+          "genres": [],
+          "year": 2026,
+          "image": "",
+          "ageRating": 0,
+          "ownerId": "reader-a"
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": true
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": []
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": {}
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": ""
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": -1
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/users/reader-a/favorites/1",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "bad/id"
+          }
+        }
+      },
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/7_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 7,
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 7,
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/7_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 7,
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 7,
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/7_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 7,
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 7,
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/7_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 7,
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 7,
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/7_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 7,
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 7,
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/7_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": 7,
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": 7,
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/newBook123_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "newBook123",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/newBook123_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "newBook123",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/newBook123_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "newBook123",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/newBook123_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "newBook123",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/newBook123_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "newBook123",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/newBook123_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "newBook123",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "newBook123",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/книга_1_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_1",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "книга_1",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/книга_1_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_1",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "книга_1",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/книга_1_reader-a",
+        "method": "create",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_1",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "книга_1",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "ALLOW",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/книга_1_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_1",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "книга_1",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/книга_1_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-a",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_1",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "книга_1",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": true
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    },
+    {
+      "expectation": "DENY",
+      "request": {
+        "path": "/databases/(default)/documents/bookLikes/книга_1_reader-a",
+        "method": "delete",
+        "auth": {
+          "uid": "reader-b",
+          "token": {}
+        },
+        "resource": {
+          "data": {
+            "bookId": "книга_1",
+            "userId": "reader-a"
+          }
+        }
+      },
+      "resource": {
+        "data": {
+          "bookId": "книга_1",
+          "userId": "reader-a"
+        }
+      },
+      "functionMocks": [
+        {
+          "function": "existsAfter",
+          "args": [
+            {
+              "anyValue": {}
+            }
+          ],
+          "result": {
+            "value": false
+          }
+        }
+      ],
+      "expressionReportLevel": "FULL"
+    }
+  ]
+}

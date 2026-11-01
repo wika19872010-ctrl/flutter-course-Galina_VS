@@ -1,0 +1,98 @@
+// Правила доступа Firestore: общий каталог, изменение своих книг и личное избранное по UID.
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents { // Применяем правила только к указанному пути документа.
+    // Для никнеймов приводим русские буквы к нижнему регистру явно.
+    function lowerBookText(value) { // Выделяем общую проверку правил в именованную функцию.
+      return value.lower()
+        .replace('А', 'а').replace('Б', 'б').replace('В', 'в').replace('Г', 'г') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('Д', 'д').replace('Е', 'е').replace('Ё', 'ё').replace('Ж', 'ж') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('З', 'з').replace('И', 'и').replace('Й', 'й').replace('К', 'к') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('Л', 'л').replace('М', 'м').replace('Н', 'н').replace('О', 'о') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('П', 'п').replace('Р', 'р').replace('С', 'с').replace('Т', 'т') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('У', 'у').replace('Ф', 'ф').replace('Х', 'х').replace('Ц', 'ц') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('Ч', 'ч').replace('Ш', 'ш').replace('Щ', 'щ').replace('Ъ', 'ъ') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('Ы', 'ы').replace('Ь', 'ь').replace('Э', 'э').replace('Ю', 'ю') // Приводим русские буквы к нижнему регистру, как в клиенте.
+        .replace('Я', 'я'); // Приводим русские буквы к нижнему регистру, как в клиенте.
+    }
+    function validBook() { // Выделяем общую проверку правил в именованную функцию.
+      let data = request.resource.data;
+      return data.keys().hasAll(['title', 'author', 'genres', 'year', 'image', 'ageRating', 'ownerId']) // Проверяем допустимые и обязательные поля документа.
+        && data.keys().hasOnly(['id', 'title', 'author', 'genres', 'year', 'image', 'ageRating', 'ownerId', // Проверяем допустимые и обязательные поля документа.
+          'description', 'pages', 'publisher', 'dimensions', 'isbn', 'authorCountry', 'publisherNickname'])
+        && (!('publisherNickname' in data) ||
+          (data.publisherNickname is string && data.publisherNickname.size() > 0
+            && data.publisherNickname.size() <= 30))
+        && (!('id' in data) || (data.id is int && data.id >= 0))
+        && data.title is string && data.title.trim().size() > 0
+        && data.author is string
+        && data.genres is list && data.year is int && data.ageRating is int
+        && data.image is string && data.ownerId == request.auth.uid; // Проверяем UID, подтверждённый Firebase Authentication.
+    }
+
+    match /sharedBooks/{bookKey} { // Применяем правила только к указанному пути документа.
+      allow read: if request.auth != null; // Разрешаем чтение только при выполнении условия доступа.
+      // add создаёт случайный ID документа; отдельное поле id новым книгам не нужно.
+      allow create: if request.auth != null && validBook()
+        && !('id' in request.resource.data);
+      allow update: if request.auth != null && resource.data.ownerId == request.auth.uid // Разрешаем изменение только владельцу с сохранением ID.
+        && validBook()
+        && request.resource.data.get('id', null) == resource.data.get('id', null)
+        && request.resource.data.get('publisherNickname', 'Не указан')
+          == resource.data.get('publisherNickname', 'Не указан');
+      allow delete: if request.auth != null && resource.data.ownerId == request.auth.uid; // Разрешаем удаление только владельцу записи.
+    }
+
+    // Одна запись на имя без учёта регистра; существующее имя нельзя перезаписать.
+    match /nicknames/{nicknameKey} {
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['ownerId', 'nickname'])
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.nickname is string
+        && request.resource.data.nickname.size() >= 1
+        && request.resource.data.nickname.size() <= 30
+        && request.resource.data.nickname.matches('[a-zA-Zа-яА-ЯёЁ0-9_.-]+')
+        && nicknameKey == 'n_' + lowerBookText(request.resource.data.nickname);
+      // Разрешаем отменить только своё резервирование при ошибке регистрации.
+      allow delete: if request.auth != null && resource.data.ownerId == request.auth.uid;
+      // Транзакция SDK проверяет занятость одного имени; список имён закрыт.
+      allow get: if request.auth != null;
+      allow list, update: if false;
+    }
+
+    // Старые лайки хранят числовой номер, новые — строковый ID документа.
+    function bookIdText(id) {
+      return id is int ? string(id) : id;
+    }
+    function validLikeId(id) {
+      return (id is int && id >= 0)
+        || (id is string && id.size() > 0 && !id.matches('.*[/].*'));
+    }
+
+    match /bookLikes/{likeKey} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.resource.data.keys().hasOnly(['bookId', 'userId'])
+        && validLikeId(request.resource.data.bookId)
+        && request.resource.data.userId == request.auth.uid
+        && likeKey == bookIdText(request.resource.data.bookId) + '_' + request.auth.uid
+        && existsAfter(/databases/$(database)/documents/users/$(request.auth.uid)/favorites/$(bookIdText(request.resource.data.bookId)));
+      allow delete: if request.auth != null
+        && resource.data.userId == request.auth.uid
+        && likeKey == bookIdText(resource.data.bookId) + '_' + request.auth.uid
+        && !existsAfter(/databases/$(database)/documents/users/$(request.auth.uid)/favorites/$(bookIdText(resource.data.bookId)));
+    }
+
+    match /users/{userId}/favorites/{bookId} { // Применяем правила только к указанному пути документа.
+      function isOwner() { // Выделяем общую проверку правил в именованную функцию.
+        return request.auth != null && request.auth.uid == userId; // Проверяем UID, подтверждённый Firebase Authentication.
+      }
+      allow read, delete: if isOwner(); // Разрешаем чтение только при выполнении условия доступа.
+      allow create, update: if isOwner() // Проверяем владельца, поля и ключ перед созданием документа.
+        && request.resource.data.keys().hasOnly(['bookId']) // Проверяем допустимые и обязательные поля документа.
+        && validLikeId(request.resource.data.bookId)
+        && bookId == bookIdText(request.resource.data.bookId);
+    }
+  }
+}
